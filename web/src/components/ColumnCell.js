@@ -19,7 +19,7 @@ const ColumnCell = props => {
 
   // If the data for that hour is a number (not a booking object), there is no booking
   // Return a <td> element that indicates the time slot is available
-  if (typeof bookingData == 'number') {
+  if (typeof bookingData === 'number') {
     columnData = <td className="table__cell--available">Available</td>
 
   // If the data for that hour is an array, this means there are two bookings to be rendered

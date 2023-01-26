@@ -34,6 +34,7 @@ function BookingForm({ onMakeBooking, user, roomData, date, updateCalendar, onSh
 
   // Array used for handleData function
   let dateArray = []
+  console.log(dateArray)
 
   // Update the current date in the application state
   const handleDate = event => {
@@ -69,6 +70,7 @@ function BookingForm({ onMakeBooking, user, roomData, date, updateCalendar, onSh
             let recurringData = handleRecurringData(recurringType, recurringEnd)
             const purpose = formData.purpose.value
             const description = formData.description.value
+            console.log(description)
           onMakeBooking({ startDate, endDate, businessUnit, purpose, roomId, recurringData })
         }}>
         <div className="content__calendar">

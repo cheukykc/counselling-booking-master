@@ -14,7 +14,7 @@ export const roomSorter = (roomList, floorNumber) => {
     return roomList.sort((first, second) => {
       const firstRoom = first.name.replace(/\D+/, '')
       const secondRoom = second.name.replace(/\D+/, '')
-      if (parseInt(firstRoom) > parseInt(secondRoom)) {
+      if (parseInt(firstRoom, 10) > parseInt(secondRoom, 10)) {
         return 1
       } else {
         return 0
