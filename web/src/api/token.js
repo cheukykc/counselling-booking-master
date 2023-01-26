@@ -3,12 +3,14 @@ import decodeJWT from 'jwt-decode'
 const key = 'userToken'
 
 export function rememberToken(token) {
+  console.log("In Remember Token")
   if (token) {
     // store the token
     localStorage.setItem(key, token)
   }
   else {
     // Clear token from local storage
+    console.log("Clear token from local storage")
     localStorage.removeItem(key)
   }
 }

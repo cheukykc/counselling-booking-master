@@ -1,7 +1,7 @@
 const axios = require('axios')
 const { rememberToken, getValidToken } = require('./token')
 
-const baseURL = process.env.REACT_APP_API_URL
+const baseURL = 'http://localhost:7000/'
 
 // Create an axios instance
 const api = axios.create({
@@ -9,6 +9,7 @@ const api = axios.create({
 })
 
 export function setToken(token) {
+  console.log("In Set token")
   // saves token to local storage
   rememberToken(token)
   if (token) {

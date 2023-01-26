@@ -29,8 +29,8 @@ export function makeBooking(data, existingBookings) {
     let existingBookingEnd = new Date(booking.bookingEnd).getTime()
 
     // Check whether there is a clash between the new booking and the existing booking
-    if (newBookingStart >= existingBookingStart && newBookingStart < existingBookingEnd || 
-        existingBookingStart >= newBookingStart && existingBookingStart < newBookingEnd) {
+    if (((newBookingStart >= existingBookingStart) && (newBookingStart < existingBookingEnd)) ||
+      ((existingBookingStart >= newBookingStart) && (existingBookingStart < newBookingEnd))) {
           // Switch the bookingClash variable if there is a clash
           return bookingClash = true
     }

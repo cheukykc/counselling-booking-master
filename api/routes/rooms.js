@@ -1,10 +1,9 @@
 const express = require('express')
+const router = new express.Router()
 const moment = require('moment')
 const momentTimezone = require('moment-timezone')
 const Room = require('../models/Room')
 const { requireJWT } = require('../middleware/auth')
-
-const router = new express.Router()
 
 router.get('/rooms', requireJWT, (req, res) => {
   Room.find()
