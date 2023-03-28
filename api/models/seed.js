@@ -3,13 +3,11 @@ const Room = require('./Room')
 Room.create([
   // Level 8
   {
-    name: 'Room 1',
+    name: 'SW Room 01',
     floor: '8',
-    capacity: 18,
-    assets: {
-      pcLab: true
-    }
-  },
+    capacity: 10
+  }
+/*
   {
     name: 'Room 2',
     floor: '8',
@@ -262,7 +260,7 @@ Room.create([
     assets: {
       tv: true
     }
-  }
+  }*/
 ])
   .then(rooms => {
     console.log(`Created ${rooms.length} rooms.`)

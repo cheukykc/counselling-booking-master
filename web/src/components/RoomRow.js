@@ -7,7 +7,15 @@ const rowMapper = (dayHours, props) => {
   let tableRow = []
 
   // Loop through each hour from 8AM to 9PM (starting at 8AM = 0)
-  for (var i = 0; i < 13; i++) {
+  for (let i = 0; i < 7; i++) {
+    tableRow.push(<td className="table__cell--available">
+      <Link to="/createbooking" onClick={() => {
+        props.onSetRoom(props.room._id)
+      }} className="table__link--available">
+        &nbsp;
+      </Link>
+    </td>)
+/*
     // Extract the corresponding data from the 24 hour array
     let bookingData = dayHours[i + 8]
 
@@ -82,6 +90,8 @@ const rowMapper = (dayHours, props) => {
         </td>
       )
     }
+
+*/
   }
   return tableRow
 }

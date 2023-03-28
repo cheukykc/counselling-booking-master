@@ -110,13 +110,14 @@ function BookingForm({ onMakeBooking, user, roomData, date, updateCalendar, onSh
           </div>
           <div className="form__group">
             <label className="form__label form__label--booking">
-              {'Business Unit'}
-              <select name="business" defaultValue="Business Unit 1" className="form__input form__input--select">
-                <option value="Business Unit 1">Business Unit 1</option>
-                <option value="Business Unit 2">Business Unit 2</option>
-                <option value="Business Unit 3">Business Unit 3</option>
-                <option value="Business Unit 4">Business Unit 4</option>
-                <option value="Business Unit 5">Business Unit 5</option>
+              {'Case Category'}
+              <select name="business" className="form__input form__input--select">
+                <option value="0" disabled>-- Select Category --</option>
+                <option value="Business Unit 1">Home</option>
+                <option value="Business Unit 2">Teenagers</option>
+                <option value="Business Unit 3">School</option>
+                <option value="Business Unit 4">Gang Violence</option>
+                <option value="Business Unit 5">Sick</option>
               </select>
             </label>
           </div>
@@ -137,13 +138,11 @@ function BookingForm({ onMakeBooking, user, roomData, date, updateCalendar, onSh
             {'Recurring end date'}
             <input type="date" name="recurringEndDate" disabled={disableRecurring} className="form__input--date"/>
           </label>
-          <div className="form__group">
+          <div className="form__group" hidden>
             <label className="form__label form__label--booking">
-              {'Purpose'}
-              <select name="purpose" defaultValue="Scheduled class" className="form__input form__input--select">
-                <option value="Scheduled Class">Scheduled class</option>
-                <option value="Special Event">Special event</option>
-                <option value="Ad-hoc Event">Ad-hoc event</option>
+              {'Available'}
+              <select name="purpose" defaultValue="Scheduled class" className="form__input form__input--select" disabled>
+                <option value="Null">Only Available for workers</option>
               </select>
             </label>
           </div>

@@ -31,7 +31,7 @@ const jwtSecret ='-----BEGIN RSA PRIVATE KEY-----\n' +
   'yHnPMKxiKe/yHH3dyzLDNcIac2vJi8S5F6wHCT5dbhZdcWMlGg==\n' +
   '-----END RSA PRIVATE KEY-----'
 const jwtAlgorithm = 'RS256'
-const jwtExpiresIn = '2d'
+const jwtExpiresIn = '1d'
 
 passport.use(User.createStrategy())
 

@@ -277,7 +277,7 @@ class App extends Component {
                     {!!decodedToken && !!roomData && !loading && (
                       <div className="wrapper">
                         <div className="header header__nav header--flex">
-                          <h1 className="header__heading header__heading--main">Company Name Here</h1>
+                          <h1 className="header__heading header__heading--main">OnNine Counselling</h1>
                           <NavBar
                             signOut={signOut}
                             loadMyBookings={loadMyBookings}
@@ -286,7 +286,7 @@ class App extends Component {
                         </div>
                         <div className="wrapper__content">
                           <div className="header__page">
-                            <h2 className="header__heading header__heading--sub">Book a room | {moment(calendarDate).format('MMMM Do YYYY')}</h2>
+                            <h2 className="header__heading header__heading--sub">Make Appointment | {moment(calendarDate).format('MMMM Do YYYY')}</h2>
                           </div>
                           <div className="sidebar">
                             <div className="sidebar__box">

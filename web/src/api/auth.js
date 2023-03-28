@@ -14,12 +14,9 @@ export function signUp({ firstName, lastName, email, password }) {
 // Sends a POST request to /auth on the server, with the email & password returning the JWT
 // Belonging to the user with supplied credentials
 export function signIn({ email, password }) {
-  console.log(email, password)
   return api.post('/auth', { email, password })
     .then(res => {
-      console.log("Pass")
       const token = res.data.token
-      console.log(res.data)
       setToken(token)
       return getDecodedToken()
     })
