@@ -4,6 +4,8 @@ import momentTimezone from 'moment-timezone'
 import Button from './Button'
 import { findRoomInfo } from '../helpers/bookingForm.js'
 
+const HKTimeZone = 'Asia/Hong_Kong'
+
 const BookingModal = props => {
   const deleteBooking = () => {
     const roomID = props.selectedBooking.roomId
@@ -29,11 +31,11 @@ const BookingModal = props => {
           <p className="modal__paragraph">{findRoomInfo(props.selectedBooking.roomId, props.roomData).name}{', Level '}
           {findRoomInfo(props.selectedBooking.roomId, props.roomData).floor}</p>
           <p className="modal__paragraph">{`${momentTimezone
-              .tz(props.selectedBooking['bookingStart'], 'Australia/Sydney')
+              .tz(props.selectedBooking['bookingStart'], HKTimeZone)
             .format('h.mma')} to ${momentTimezone
-              .tz(props.selectedBooking['bookingEnd'], 'Australia/Sydney')
+              .tz(props.selectedBooking['bookingEnd'], HKTimeZone)
               .format('h.mma')}`}
-            <p className="modal__paragraph">{`${momentTimezone.tz(props.selectedBooking['bookingStart'], 'Australia/Sydney').format('MMMM Do, YYYY')} to ${momentTimezone.tz(props.selectedBooking['bookingEnd'], 'Australia/Sydney').format('MMMM Do, YYYY')}`}
+            <p className="modal__paragraph">{`${momentTimezone.tz(props.selectedBooking['bookingStart'], HKTimeZone).format('MMMM Do, YYYY')} to ${momentTimezone.tz(props.selectedBooking['bookingEnd'], HKTimeZone).format('MMMM Do, YYYY')}`}
           </p>
           </p>
           <p className="modal__paragraph"><strong>Business Unit </strong>{props.selectedBooking['businessUnit']}</p>

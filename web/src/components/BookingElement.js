@@ -3,6 +3,7 @@ import moment from 'moment'
 import momentTimezone from 'moment-timezone'
 import Button from './Button'
 import { findRoomInfo } from '../helpers/bookingForm.js'
+const HKTimeZone = 'Asia/Hong_Kong'
 
 function BookingElement({
   bookingData,
@@ -11,8 +12,8 @@ function BookingElement({
 }) {
 
   const roomInfo = findRoomInfo(bookingData.roomId, roomData)
-  const startTime = momentTimezone.tz(bookingData.bookingStart, 'Australia/Sydney').format('h.mma')
-  const endTime = momentTimezone.tz(bookingData.bookingEnd, 'Australia/Sydney').format('h.mma')
+  const startTime = momentTimezone.tz(bookingData.bookingStart, HKTimeZone).format('h.mma')
+  const endTime = momentTimezone.tz(bookingData.bookingEnd, HKTimeZone).format('h.mma')
 
   return (
     <div className="booking__box">

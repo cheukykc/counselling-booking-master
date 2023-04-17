@@ -2,11 +2,13 @@ import moment from 'moment'
 import momentTimezone from 'moment-timezone'
 import api from './init'
 
+const HKTimeZone = 'Asia/Hong_Kong'
+
 // Function to receive booking data (AEST) and convert to JS Date object
 // Data expected in [year, month, date, hours, seconds] format
 const dateUTC = (dataArray) => {
   // Ensure date data is saved in AEST and then converted to a Date object in UTC
-  return momentTimezone(dataArray).tz('Australia/Sydney').toDate()
+  return momentTimezone(dataArray).tz(HKTimeZone).toDate()
 }
 
 // Make a room booking
