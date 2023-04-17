@@ -342,7 +342,7 @@ class App extends Component {
                         !!currentRoom && (
                           <div className="wrapper">
                             <header className="header header__nav header--flex">
-                              <h1 className="header__heading header__heading--main">Company Name Here</h1>
+                              <h1 className="header__heading header__heading--main">OnNine Counselling</h1>
                               <NavBar
                                 signOut={signOut}
                                 loadMyBookings={loadMyBookings}
@@ -380,7 +380,7 @@ class App extends Component {
                         !!roomData && (
                           <div className="wrapper">
                             <div className="header header__nav header--flex">
-                              <h1 className="header__heading header__heading--main">Company Name Here</h1>
+                              <h1 className="header__heading header__heading--main">OnNine Counselling</h1>
                               <NavBar
                                 signOut={signOut}
                                 loadMyBookings={loadMyBookings}
@@ -402,6 +402,42 @@ class App extends Component {
                         )}
                     </Fragment>
                   ))} />
+
+                <Route path="/chatroom" exact render={requireAuth(() => (
+                  <Fragment>
+                    { !!decodedToken && !roomData && loading && (
+                      <div className="loading_animation">
+                        <Loading />
+                      </div>
+                    ) }
+                    {!!decodedToken && !!roomData && !loading && (
+                      <div className="wrapper">
+                        <div className="header header__nav header--flex">
+                          <h1 className="header__heading header__heading--main">OnNine Counselling</h1>
+                          <NavBar
+                            signOut={signOut}
+                            loadMyBookings={loadMyBookings}
+                            user={signedIn ? decodedToken.sub : null}
+                          />
+                        </div>
+                        <div className="wrapper__content">
+                          <div className="header__page">
+                            <h2 className="header__heading header__heading--sub">Chatroom</h2>
+                          </div>
+                          <div className="sidebar">
+                            {/** Contacts */}
+
+                          </div>
+                          <div className="content">
+                            {/** chatbox */}
+                            
+                          </div>
+                         </div>
+
+                      </div>
+                    )}
+                  </Fragment>
+                ))} />
 
                 <Route render={({ location }) => <h2>
                       {' '}
